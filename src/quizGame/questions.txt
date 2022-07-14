@@ -1,3 +1,4 @@
-what command changes directory?, cd
-how many bytes are used to store an int?, 4
-True or False - Primatives start with uppercase letters, false
+what command changes directory?,cd
+how many bytes are used to store an int?,4
+True or False - Primatives start with uppercase letters,false
+What git command retrieves things for server?,pull,git pull
