@@ -7,28 +7,35 @@ import java.util.Scanner;
 public class GameApp {
 
 	public static void main(String[] args) {
-		 
+		int count = 1;
+		int correctCount = 0;
+		String report = ""; 
 		Scanner input = new Scanner(System.in);
 		//File file = new File("questions.txt");
 		File file = new File("src/quizGame/questions.txt");
 		 try {
 			Scanner fileInput = new Scanner(file);
 			while(fileInput.hasNextLine()) {
-				
+			
 				String[] qA = fileInput.nextLine().split(",");
 				String question = qA[0];
 				String answer = qA[1].strip();
-				System.out.println(question);
+				System.out.println(count+ ": " + question);
 				System.out.print("Enter answer: ");
 				String userAnswer = input.nextLine();
 				if(userAnswer.equalsIgnoreCase(answer)) {
-					System.out.println("Great Job");
+					report += "✅ " + count + ": " + question + "\n";
+					correctCount++;
 				}
 				else {
-					System.out.println("Sorry the correct answer was: "+ answer);
+					report += "❌ " + count + ": " + question 
+							+ " expected: "+ answer + " actual: "
+							+ userAnswer +  "\n";
 				}
+				count++;
 			}
-			
+			System.out.println("\nResult " + correctCount + "/" + (count - 1) + "   ************");
+			System.out.println(report);
 			
 			
 			
