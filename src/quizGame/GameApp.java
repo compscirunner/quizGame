@@ -5,6 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class GameApp {
+	
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_BLACK = "\u001B[30m";
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_PURPLE = "\u001B[35m";
+	public static final String ANSI_CYAN = "\u001B[36m";
+	public static final String ANSI_WHITE = "\u001B[37m";
 
 	public static void main(String[] args) {
 		int count = 1;
@@ -24,13 +34,13 @@ public class GameApp {
 				System.out.print("Enter answer: ");
 				String userAnswer = input.nextLine();
 				if(userAnswer.equalsIgnoreCase(answer)) {
-					report += "✅ " + count + ": " + question + "\n";
+					report +=  "✅ " + count + ": " + question + "\n" ;
 					correctCount++;
 				}
 				else {
-					report += "❌ " + count + ": " + question 
+					report +=   "❌ " + count + ": " + question 
 							+ " expected: "+ answer + " actual: "
-							+ userAnswer +  "\n";
+							+ userAnswer +   "\n";
 				}
 				count++;
 			}
