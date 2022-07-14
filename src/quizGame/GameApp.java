@@ -16,6 +16,9 @@ public class GameApp {
 	public static final String ANSI_PURPLE = "\u001B[35m";
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
+	public static final String RED_BACKGROUND = "\u001B[41m";
+	public static final String GREEN_BACKGROUND	= "\u001B[42m";
+
 
 	//TODO Add Test user name
 	//TODO add date to report
@@ -28,6 +31,10 @@ public class GameApp {
 		//File file = new File("questions.txt");
 		File file = new File("src/quizGame/questions.txt");
 		 try {
+			//clear console
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+			//load file
 			Scanner fileInput = new Scanner(file);
 			while(fileInput.hasNextLine()) {
 			
@@ -35,7 +42,7 @@ public class GameApp {
 				String question = qA[0];
 				String answer = qA[1].strip();
 				String[] answers = Arrays.copyOfRange(qA, 1, qA.length);
-				System.out.println(Arrays.toString(answers));
+				//System.out.println(Arrays.toString(answers));
 				
 			
 				System.out.println(count+ ": " + question);
@@ -43,13 +50,13 @@ public class GameApp {
 				String userAnswer = input.nextLine();
 				//if((userAnswer.equalsIgnoreCase(answer))) {
 				if(Arrays.asList(answers).contains(userAnswer)) {
-					report +=  "✅ " + count + ": " + question + "\n" ;
+					report +=GREEN_BACKGROUND + "PASS" + ANSI_RESET +" " + count + ": " + question + ANSI_RESET +  "\n" ;
 					correctCount++;
 				}
 				else {
-					report +=   "❌ " + count + ": " + question 
+					report += RED_BACKGROUND +  "FAIL" + ANSI_RESET + " " + count + ": " + question 
 							+ " expected: "+ answer + " actual: "
-							+ userAnswer +   "\n";
+							+ userAnswer + ANSI_RESET +  "\n";
 				}
 				count++;
 			}
