@@ -1,4 +1,20 @@
 what command changes directory?,cd
 how many bytes are used to store an int?,4
-True or False - Primatives start with uppercase letters,false
-What git command retrieves things for server?,pull,git pull
+True or False - Primitives start with uppercase letters,false
+List contents of directory,ls
+Make directory in terminal,mkdir
+bash command to move file from directory to another,mv
+Git command to place files on server,push
+Git command to retrieve files from server,pull
+To get user input in Java we use the _____ class,scanner
+True or False - booleans are used to hold true or false data,true
+True or False - Long is used to store large decimal numbers,false
+True or false - You can use a private method in another file/class,false
+Framework for effective collaboration among teams working on complex products?,scrum
+What is the name of the method that is the entry point for our programs?,main
+True or False - Arrays has a set value of items it can store,true
+Which symbol tests for equality in Java?,==
+A constructor is used to create an ________,instance,object
+What do you call a string that has nothing in it?,empty string
+What's a type of method that has no return value?,void
+How many primitives are there in Java?,8

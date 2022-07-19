@@ -28,8 +28,8 @@ public class GameApp {
 		int correctCount = 0;
 		String report = ""; 
 		Scanner input = new Scanner(System.in);
-		File file = new File("questions.txt");
-		//File file = new File("src/quizGame/questions.txt");
+		//File file = new File("questions.txt");
+		File file = new File("src/quizGame/questions.txt");
 		 try {
 			//clear console
 			System.out.print("\033[H\033[2J");
